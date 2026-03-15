@@ -11,9 +11,22 @@ st.set_page_config(
 )
 
 # --- HELPER FUNCTIONS ---
+import os
+
 @st.cache_data
 def load_data():
-    """Load data from the SQLite database."""
+    """Load data from the SQLite database. Auto-generates it if missing."""
+    if not os.path.exists('data/student_performance.db'):
+        os.makedirs('data', exist_ok=True)
+        from src.generate_dataset import create_mock_data
+        from src.data_processing import clean_data, feature_engineering, store_in_db
+        
+        create_mock_data()
+        raw_df = pd.read_csv("data/students_performance.csv")
+        cleaned_df = clean_data(raw_df)
+        engineered_df = feature_engineering(cleaned_df)
+        store_in_db(engineered_df)
+        
     try:
         conn = sqlite3.connect('data/student_performance.db')
         df = pd.read_sql("SELECT * FROM students", conn)
