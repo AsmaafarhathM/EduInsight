@@ -64,8 +64,3 @@ After querying and plotting the dataset, potential insights normally include:
 - **Test Preparation Matters**: Students who completed the test preparation course generally score higher overall on average than those who didn't.
 - **Gender Variances**: Performance variations might exist across different exam subjects among genders (e.g., females often outperforming on reading/writing).
 - **Financial Situations (Lunch)**: Historically (with this data logic), standard lunch (which assumes no financial aid logic) typically correlates with higher scores than free/reduced lunches, showcasing socioeconomic elements influencing student performance.
-
-## 7. Resume Points
-If adding this to your resume, consider using these professional bullet points:
-- **Developed an end-to-end data pipeline in Python** utilizing Pandas for dataset preprocessing and feature engineering, effectively handling missing data and storing cleaned outputs into a relational SQLite database.
-- **Generated actionable insights on student performance data** by using Matplotlib and Seaborn for graphical analysis, identifying key socioeconomic features that accurately correspond with score improvements.
